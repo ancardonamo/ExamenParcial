@@ -40,23 +40,26 @@ function total(){
         mensaje.innerHTML=`<div class="card-body">
                 <h5 class="card-title">Total</h5>
                 <p class="card-text">$${elTotal}</p>
-                <button >confirmar compra</button>
+                <button onclick="compro()">confirmar compra</button>
             </div>`
         
     }
 
-    if (tot1==0 || tot2==0)  {
+    if (tot1==0 || tot2==0 || tot1== "" || tot2== "")  {
         let elTotal=((tot1*500000)+(tot2*350000))
         mensaje.innerHTML=``
         mensaje.innerHTML=`<div class="card-body">
                 <h5 class="card-title">Total</h5>
                 <p class="card-text">$${elTotal}</p>
-                <button >confirmar compra</button>
+                <button onclick="compro(${elTotal})" >confirmar compra</button>
             </div>`
     }
     
 }
 
+compro(es){
+    alert(`Se compro ${es}`)
+}
 
 function enforceMinMax(el) {
     if (el.value != "") {
